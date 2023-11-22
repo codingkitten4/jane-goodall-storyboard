@@ -69,6 +69,7 @@ body::-webkit-scrollbar {
     height: 400px;
     background-color: gray;
     padding-left: 40px;
+    padding-right: 40px;
 }
 
 .text {
@@ -101,6 +102,11 @@ body::-webkit-scrollbar {
 }
 
 .qs:click {
+    color: black; 
+    background-color: white;
+}
+
+.qs:focus {
     color: black; 
     background-color: white;
 }
