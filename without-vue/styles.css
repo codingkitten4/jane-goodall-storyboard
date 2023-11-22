@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes card-hover {
+    from { background-color: black; color: white; box-shadow: 0px 0px 0px black; }
+    to { background-color: white; color:black; box-shadow: 5px 5px 5px black; }
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    background-color: black;
+    min-height: 200vw;
+}
+
+p {
+    color: white;
+}
+
+#title {
+    color: white;
+    font-family: Rubik, sans-serif;
+    text-align: center;
+}
+
+#author-name {
+    font-family: Rubik, sans-serif;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    margin: auto;
+    row-gap: 20px;
+    column-gap: 20px;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    border-radius: 30px;
+    background-color: grey;
+    width: 98vw;
+    height: 450px;
+    overflow: hidden;
+}
+
+.card {
+    background-color: black;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    font-family: Rubik, sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+}
+
+.card:hover {
+    animation: card-hover;
+    animation-duration: 1500ms;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 5px black;
+}
+
+#e-card-hidden {
+    display: none;
+}
+
+#e-card-shown {
+    z-index: 20 !important;
+    width: 500px;
+    height: 500px;
+    background-color: red;
+}

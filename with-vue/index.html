@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>LA Project</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+    <div id="app">
+        <div class="q-a-part">
+            <h1 id="title">Jane Goodall Project (Questions)</h1>
+
+            <div class="questions-container">
+                <div class="question-selector">
+                    <div class="qs 1" v-on:click="qCard = 1, qCardQuestion = 'Who is the key individual explored in this text?', qCardAnswer = 'Jane Goodall'">Q1</div>
+                    <div class="qs 2" v-on:click="qCard = 2, qCardQuestion = 'Where did Jane Goodall travel to and what was the name of the ship she travelled on?'">Q2</div>
+                    <div class="qs 3" v-on:click="qCard = 3, qCardQuestion = 'According to paragraph 2, who is Louis Leakey and what details do we learn about him?'">Q3</div>
+                    <div class="qs 4" v-on:click="qCard = 4, qCardQuestion = 'In paragraphs 2 and 3, how does Jane react to Louis? Use evidence from the text to support your response.'">Q4</div>
+                    <div class="qs 5" v-on:click="qCard = 5, qCardQuestion = 'Using paragraph 4 working with Leaky fascinated Jane…, what was Leakey trying to find out about apes and humans?, why was Jane Goodall the ideal candidate for the role?'">Q5</div>
+                    <div class="qs 6" v-on:click="qCard = 6, qCardQuestion = 'What does this section of dialogue tell you about Jane Goodall and Louis Leakey?  \'One day, when Leakey was speaking about the need to study the great apes, Jane blurted out, \'\'Louis, I wish you wouldn\'t keep talking about it, because that\'s just what I want to do.\'\'  \'\'I\'ve been waiting for you to tell me that,\'\' he replied.'">Q6</div>
+                    <div class="qs 7" v-on:click="qCard = 7, qCardQuestion = 'Re-read paragraph 7 \'With Jane on board…\', Find an image of \'\'Gombe Stream Game Reserve in Tanganyika (now Gombe National Park in Tanzania).\'\''">Q7</div>
+                    <div class="qs 8" v-on:click="qCard = 8, qCardQuestion = 'Re-read paragraph 8, \'\'It is so beautiful, with the crystal clear blue lake, the tiny white pebbles on the beach, the sparkling ice cold mountain stream, the palm nut trees, the comical baboons … It is the Africa of my childhood\'s dreams, and I have the chance of finding out things which no one has ever known before.\'\' Find some images to bring this quote to life'">Q8</div>
+                    <div class="qs 9" v-on:click="qCard = 9, qCardQuestion = 'Using paragraph 8 to help you, explain Jane\'s role in this new and beautiful land.'">Q9</div>
+                </div>
+                <div class="question-answer">
+                    <p class="q text">
+                        Q. {{ qCardQuestion }}
+                    </p>
+                    <hr style="width: 400px;" />
+                    <p class="a text">
+                        A. {{ qCardAnswer }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="scroll-down" onclick="
+                for(let i = 0; i < 1201; i++) {
+                    function scrollDown() {
+                        document.body.scrollTop += 1; 
+                        document.documentElement.scrollTop += 1;
+                    }
+                    setTimeout(scrollDown, 100);
+                }">
+                    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+            </div>
+
+        </div>
+
+        <div class="storyboard-part">
+            <h1 id="title">Jane Goodall Project (Storyboard)</h1>
+
+            <div class="cards-container">
+                <div class="card" id="card-1" v-on:click="eCardVisible = true, eCardImgPath = 'img/1.jpg', eCardInvisible = false">P1</div>
+                <div class="card" id="card-5" v-on:click="eCardVisible = true, eCardImgPath = 'img/5.jpg', eCardInvisible = false">P5</div>
+                <div class="card" id="card-2" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/2.jpg', eCardInvisible = false">P2</div>
+                <div class="card" id="card-6" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/6.jpg', eCardInvisible = false">P6</div>
+                <div class="e-card-container" v-show="eCardVisible">
+                    <div class="e-card-top-container">
+                        <img v-bind:src="eCardImgPath" alt="image" class="e-card-img" />
+                        <button type="button" id="e-card-close-btn" v-on:click="eCardVisible = false, eCardInvisible = true">
+                            <i class="fa fa-window-close" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <p>
+                        {{ eCardText }}
+                    </p>
+                </div>
+                <div class="card" id="card-3" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/3.jpg', eCardInvisible = false">P3</div>
+                <div class="card" id="card-7" v-show="eCardInvisible"  v-on:click="eCardVisible = true, eCardImgPath = 'img/7.jpg', eCardInvisible = false">P7</div>
+                <div class="card" id="card-4" v-on:click="eCardVisible = true, eCardImgPath = 'img/4.jpg', eCardInvisible = false">P4</div>
+                <div class="card" id="card-8" v-on:click="eCardVisible = true, eCardImgPath = 'img/8.jpg', eCardInvisible = false">P8</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data : function() {
+                return {
+                    qCard: 1,
+                    qCardQuestion: 'Who is the key individual explored in this text?',
+                    qCardAnswer: 'Jane Goodall',
+                    eCardVisible: false,
+                    eCardImgPath: 'img/1.jpg',
+                    eCardInvisible: true,
+                    eCardText: '',
+                }
+            }
+        });
+
+        app.mount('#app')
+    </script>
+</body>
+</html>
