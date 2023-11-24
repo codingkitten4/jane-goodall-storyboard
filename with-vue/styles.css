@@ -70,6 +70,13 @@ body::-webkit-scrollbar {
     background-color: gray;
     padding-left: 40px;
     padding-right: 40px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.question-answer::-webkit-scrollbar {
+    display: none;
 }
 
 .text {
