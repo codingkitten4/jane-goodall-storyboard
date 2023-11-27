@@ -99,21 +99,12 @@ body::-webkit-scrollbar {
     margin-bottom: 35px;
     background-color: rgb(31, 35, 35);
     border-radius: 15px;
+    user-select: none;
 }
 
 .qs:hover {
     animation-name: question-card-hover-animation;
     animation-duration: 1s;
-    color: black; 
-    background-color: white;
-}
-
-.qs:click {
-    color: black; 
-    background-color: white;
-}
-
-.qs:focus {
     color: black; 
     background-color: white;
 }
@@ -218,4 +209,9 @@ body::-webkit-scrollbar {
 
 .e-card-img {
     margin: auto;
+}
+
+.e-card-bottom-container {
+    padding-left: 50px;
+    padding-right: 50px;
 }

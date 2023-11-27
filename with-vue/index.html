@@ -22,7 +22,7 @@
                     <div class="qs 6" v-on:click="qCard = 6, qCardQuestion = 'What does this section of dialogue tell you about Jane Goodall and Louis Leakey?  \'One day, when Leakey was speaking about the need to study the great apes, Jane blurted out, \'\'Louis, I wish you wouldn\'t keep talking about it, because that\'s just what I want to do.\'\'  \'\'I\'ve been waiting for you to tell me that,\'\' he replied.', qCardAnswer = 'This section of dialogue shows that Jane Goodall is eager to go out and explore the chimps, and Louis Leakey has been observing Jane and he knows it too.', qCardImgShown = false, qCardImg2Shown = false, qCardImg3Shown = false">Q6</div>
                     <div class="qs 7" v-on:click="qCard = 7, qCardQuestion = 'Re-read paragraph 7 \'With Jane on board…\', Find an image of \'\'Gombe Stream Game Reserve in Tanganyika (now Gombe National Park in Tanzania).\'\'', qCardAnswer = '', qCardImgPath = 'img\\q-card-1.jpg', qCardImgShown = true, qCardImg2Shown = false, qCardImg3Shown = false">Q7</div>
                     <div class="qs 8" v-on:click="qCard = 8, qCardQuestion = 'Re-read paragraph 8, \'\'It is so beautiful, with the crystal clear blue lake, the tiny white pebbles on the beach, the sparkling ice cold mountain stream, the palm nut trees, the comical baboons … It is the Africa of my childhood\'s dreams, and I have the chance of finding out things which no one has ever known before.\'\' Find some images to bring this quote to life', qCardAnswer = '', qCardImgPath = 'img\\q-card-2.jpg', qCardImgShown = true, qCardImg2Shown = true, qCardImg3Shown = true, qCardImgPath2 = 'img\\q-card-3.jpg', qCardImgPath3 = 'img\\q-card-4.jpg'">Q8</div>
-                    <div class="qs 9" v-on:click="qCard = 9, qCardQuestion = 'Using paragraph 8 to help you, explain Jane\'s role in this new and beautiful land.', qCardImgShown = false, qCardImg2Shown = false, qCardImg3Shown = false">Q9</div>
+                    <div class="qs 9" v-on:click="qCard = 9, qCardQuestion = 'Using paragraph 8 to help you, explain Jane\'s role in this new and beautiful land.', qCardAnswer = 'Jane\'s role in this country is exciting. It shows how this field of study excited Jane, and it also showed how she was ready to research and explore \'the Africa of [her] childhood dreams\'.', qCardImgShown = false, qCardImg2Shown = false, qCardImg3Shown = false">Q9</div>
                 </div>
 
                 <div class="question-answer">
@@ -56,9 +56,9 @@
             <h1 id="title">Jane Goodall Project (Storyboard)</h1>
 
             <div class="cards-container">
-                <div class="card" id="card-1" v-on:click="eCardVisible = true, eCardImgPath = 'img/1.jpg', eCardInvisible = false">P1</div>
+                <div class="card" id="card-1" v-on:click="eCardVisible = true, eCardImgPath = 'img/1.jpg', eCardInvisible = false, eCardText = 'On the 13th of March, 1957, Jane Goodall set out on her trip to Africa aboard the Kenya Castle. Once settled in with with her friend, Clo, and her family, she was able to find a job at the Coryndon Museum as a secretary to the head.'">P1</div>
                 <div class="card" id="card-5" v-on:click="eCardVisible = true, eCardImgPath = 'img/5.jpg', eCardInvisible = false">P5</div>
-                <div class="card" id="card-2" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/2.jpg', eCardInvisible = false">P2</div>
+                <div class="card" id="card-2" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/2.jpg', eCardInvisible = false, eCardText = 'Working with Louis Leakey (the museum head) was a fascinating experience for Jane Goodall. Louis thought that large apes should be studied in the wild. However, he needed someone with a mind \'uncluttered by theories\'. He kept talking with Jane about this idea, and soon enough, she blurted out, \'\'Louis, I wish you wouldn\'t keep talking about it, because that\'s just what I want to do.\'\''">P2</div>
                 <div class="card" id="card-6" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/6.jpg', eCardInvisible = false">P6</div>
                 <div class="e-card-container" v-show="eCardVisible">
                     <div class="e-card-top-container">
@@ -67,13 +67,15 @@
                             <i class="fa fa-window-close" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <p>
-                        {{ eCardText }}
-                    </p>
+                    <div class="e-card-bottom-container">
+                        <p>
+                            {{ eCardText }}
+                        </p>
+                    </div>
                 </div>
-                <div class="card" id="card-3" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/3.jpg', eCardInvisible = false">P3</div>
+                <div class="card" id="card-3" v-show="eCardInvisible" v-on:click="eCardVisible = true, eCardImgPath = 'img/3.jpg', eCardInvisible = false, eCardText = 'With Jane\'s consent, Louis Leakey started searching for the appropriate funding for the project, and got the necessary permits. Then, the officials protested against sending a young woman alone into the jungle, so Jane\'s mother, Vanne, agreed to come with her into Gombe for a few months. So, on 14th July, 1960, Jane and her mother set out on the journey to Gombe.'">P3</div>
                 <div class="card" id="card-7" v-show="eCardInvisible"  v-on:click="eCardVisible = true, eCardImgPath = 'img/7.jpg', eCardInvisible = false">P7</div>
-                <div class="card" id="card-4" v-on:click="eCardVisible = true, eCardImgPath = 'img/4.jpg', eCardInvisible = false">P4</div>
+                <div class="card" id="card-4" v-on:click="eCardVisible = true, eCardImgPath = 'img/4.jpg', eCardInvisible = false, eCardText = 'The journey was just the starting of a 55-year study of chimpanzees. When they arrived in Gombe, they were greeted by a game ranger, two guides, and a cook. They set up their tent close to the beach. Jane was eager to start researching the chimps, but they kept running away from her.'">P4</div>
                 <div class="card" id="card-8" v-on:click="eCardVisible = true, eCardImgPath = 'img/8.jpg', eCardInvisible = false">P8</div>
             </div>
         </div>
